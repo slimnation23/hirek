@@ -522,6 +522,15 @@ nav ul li a:hover {
 }
 .content {
   width: 75%;
+  margin-top: -10px;
+}
+
+.content h1 {
+    font-size: 28px;
+}
+
+.content h1 span {
+    color: rgb(255, 30, 0);
 }
 
 @media (max-width: 786px) {
