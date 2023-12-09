@@ -62,7 +62,7 @@ a {
 }
 
 .sun {
-    color: #fff !important;
+  color: #fff !important;
 }
 
 .switch {
@@ -142,6 +142,11 @@ nav ul li a {
   flex-direction: column;
   align-items: center;
   color: var(--grey);
+  text-transform: uppercase;
+}
+
+nav ul li a:hover {
+  color: rgb(255, 30, 0);
 }
 
 .menu-toggle {
@@ -231,6 +236,7 @@ nav ul li a {
   border-radius: 100%;
   border: 2px solid transparent;
   opacity: 0.7;
+  rotate: 250deg;
   -webkit-animation: coccoc-alo-circle-img-anim 1s infinite ease-in-out;
   -moz-animation: coccoc-alo-circle-img-anim 1s infinite ease-in-out;
   -ms-animation: coccoc-alo-circle-img-anim 1s infinite ease-in-out;
@@ -478,6 +484,44 @@ nav ul li a {
   100% {
     transform: rotate(0) scale(1) skew(1deg);
   }
+}
+
+.container {
+  width: 100%;
+  margin-top: 100px;
+  padding: 0px 13% 30px 10%;
+  display: flex;
+  gap: 10px;
+}
+
+.sidebar {
+  width: 25%;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul li::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  background-color: rgb(255, 30, 0);
+  width: 7px;
+  height: 7px;
+  rotate: 45deg;
+  border-radius: 18%;
+}
+
+.sidebar ul li a {
+  color: #000;
+  text-transform: uppercase;
+}
+.content {
+  width: 75%;
 }
 
 @media (max-width: 786px) {
