@@ -29,6 +29,8 @@ a {
   height: 70px;
   box-shadow: 0 8px 5px rgba(0, 0, 0, 0.116);
   padding: 0 5%;
+  z-index: 999;
+  background-color: #fff;
 }
 
 .nav-left {
@@ -526,11 +528,71 @@ nav ul li a:hover {
 }
 
 .content h1 {
-    font-size: 28px;
+  font-size: 28px;
+  margin-bottom: 25px;
 }
 
 .content h1 span {
-    color: rgb(255, 30, 0);
+  color: rgb(255, 30, 0);
+}
+
+.content-date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.content-date__info,
+.content-date__likes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.content-date__info img {
+  width: 25px;
+  height: 25px;
+  border-radius: 2px;
+}
+
+.content-date__info span {
+  background-color: rgb(224, 224, 224);
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+
+.like {
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.like i {
+  margin-right: 5px;
+}
+
+.like span {
+  font-size: 12px;
+}
+
+.green {
+  background-color: #228C2F;
+}
+
+.red {
+  background-color: #e01129;
+}
+
+.main-photo {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 786px) {
