@@ -620,6 +620,10 @@ nav ul li a:hover {
   width: auto !important;
 }
 
+.ul-content {
+  margin-bottom: 20px;
+}
+
 .info-desk {
   border: 1px solid #000;
   background-color: #FCF4C5;
@@ -630,6 +634,10 @@ nav ul li a:hover {
 .info-desk p {
   font-weight: 700;
   text-align: center;
+}
+
+.info-desk ul {
+  margin-bottom: 25px;
 }
 
 .info-desk ul li {
@@ -643,6 +651,7 @@ nav ul li a:hover {
 .warning {
   background-color: #F2C8CA;
   padding: 15px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 786px) {
