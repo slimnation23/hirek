@@ -10,10 +10,6 @@
   --grey: rgb(128, 128, 128);
 }
 
-li {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
 }
@@ -137,6 +133,7 @@ nav ul {
 
 nav ul li {
   margin-right: 25px;
+  list-style: none;
 }
 
 nav ul li a {
@@ -527,6 +524,10 @@ nav ul li a:hover {
   margin-top: -10px;
 }
 
+.content p {
+  margin-bottom: 20px;
+}
+
 .content h1 {
   font-size: 28px;
   margin-bottom: 25px;
@@ -534,6 +535,11 @@ nav ul li a:hover {
 
 .content h1 span {
   color: rgb(255, 30, 0);
+}
+
+.content img {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .content-date {
@@ -553,6 +559,7 @@ nav ul li a:hover {
   width: 25px;
   height: 25px;
   border-radius: 2px;
+  margin-bottom: 0;
 }
 
 .content-date__info span {
@@ -590,9 +597,52 @@ nav ul li a:hover {
   background-color: #e01129;
 }
 
-.main-photo {
-  width: 100%;
-  margin-bottom: 30px;
+.redtext {
+  color: red;
+}
+
+.note {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  color: #e01129;
+  font-weight: 600;
+  background-color: #FCF4C5;
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.prod_img {
+  display: block;
+  margin: 0 auto;
+  width: auto !important;
+}
+
+.info-desk {
+  border: 1px solid #000;
+  background-color: #FCF4C5;
+  padding: 20px 35px;
+  margin-bottom: 20px;
+}
+
+.info-desk p {
+  font-weight: 700;
+  text-align: center;
+}
+
+.info-desk ul li {
+  margin-bottom: 15px;
+}
+
+.info-desk ul li span {
+  font-size: 10px;
+}
+
+.warning {
+  background-color: #F2C8CA;
+  padding: 15px;
 }
 
 @media (max-width: 786px) {
