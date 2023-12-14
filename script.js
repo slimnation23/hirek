@@ -35,3 +35,5 @@ btnSubmit.addEventListener("click", () => {
   popup.style.display = "none";
   wheelWrapper.style.display = "none";
 });
+
+
