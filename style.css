@@ -1312,7 +1312,6 @@ form .count {
 .nav-link {
   padding: 12px 15px;
   font-family: "Libre Franklin", sans-serif;
-  color: #fff;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
@@ -1500,6 +1499,61 @@ span.inL_211661 span {
 }
 .inL_211661 {
   margin-top: 10px;
+}
+
+.comment-field {
+  display: flex;
+  padding: 10px 20px 20px 10px;
+  background-color: #E9ECF1;
+  border-radius: 2px;
+}
+
+.user-photo {
+  margin-right: 15px;
+  background-color: #BEC4D0;
+  padding: 5px;
+  height: fit-content;
+  border-radius: 5px;
+}
+
+.user-photo i {
+  color: #fff;
+}
+
+.add-comment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.add-comment input {
+  width: 100%;
+  margin-bottom: 5px;
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.add-comment-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-comment-bottom button {
+  background-color: #5D77A2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.add-comment-bottom button:hover {
+  opacity: 0.7;
+}
+
+.add-comment-bottom span {
+  font-size: 12px;
 }
 
 @media (max-width: 786px) {
