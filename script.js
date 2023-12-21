@@ -36,7 +36,6 @@ btnSubmit.addEventListener("click", () => {
   wheelWrapper.style.display = "none";
 });
 
-
 // Menu toggle
 const menuBtn = document.querySelector(".menu-toggle");
 const navList = document.querySelector(".nav-list");
@@ -56,3 +55,17 @@ function toggleMenu() {
     });
   });
 }
+
+// Form phone
+const phoneBtn = document.querySelector(".coccoc-alo-phone");
+const formPopup = document.querySelector(".overlay-form");
+const cancelBtn = document.querySelector(".cancel-btn");
+
+phoneBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  formPopup.style.display = "block";
+});
+
+cancelBtn.addEventListener("click", () => {
+  formPopup.style.display = "none";
+});
