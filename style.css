@@ -36,10 +36,14 @@ a {
 }
 
 .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
   color: var(--grey);
   border-radius: 50px;
   border: 1px solid var(--grey);
-  padding: 5px 8px;
 }
 
 .arrow:hover {
