@@ -870,6 +870,10 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+.cancel-btn:hover {
+  background-color: #8A010B;
+}
+
 .cancel-btn i {
   color: #fff;
 }
@@ -1787,6 +1791,9 @@ span.inL_211661 span {
   }
 
   .content {
+    width: 100%;
+  }
+  .form-content form input {
     width: 100%;
   }
 }
