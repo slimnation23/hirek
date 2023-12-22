@@ -57,6 +57,19 @@ a {
   font-weight: 700;
 }
 
+.logo-img {
+  display: block;
+}
+
+.logo-center {
+  position: absolute;
+  left: 50%;
+}
+
+.logo-img img {
+  width: 50px;
+}
+
 .dark-mode {
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.4);
