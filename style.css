@@ -20,6 +20,10 @@ body.dark-mode {
   color: #fff;
 }
 
+.nav-list.dark-mode {
+  background-color: #121212;
+}
+
 .nav.dark-mode {
   background-color: #121212;
   box-shadow: 0 8px 5px rgba(211, 180, 4, 0.308);
@@ -1841,6 +1845,10 @@ span.inL_211661 span {
     opacity: 1;
     z-index: 25;
     display: flex;
+  }
+
+  nav ul li {
+    margin-bottom: 15px;
   }
 
   .switch {

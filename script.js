@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.add("dark-mode");
     nav.classList.add("dark-mode");
     menuBtn.classList.add("dark-mode");
+    navList.classList.add("dark-mode");
     wheelCursor.classList.add("dark-mode");
     infoDesk.classList.add("dark-mode");
     popupDark.classList.add("dark-mode");
@@ -114,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body.classList.add("dark-mode");
       nav.classList.add("dark-mode");
       menuBtn.classList.add("dark-mode");
+      navList.classList.add("dark-mode");
       wheelCursor.classList.add("dark-mode");
       warning.classList.add("dark-mode");
       popupDark.classList.add("dark-mode");
@@ -136,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuBtn.classList.remove("dark-mode");
       wheelCursor.classList.remove("dark-mode");
       infoDesk.classList.remove("dark-mode");
+      navList.classList.remove("dark-mode");
       orderForm.classList.remove("dark-mode");
       warning.classList.remove("dark-mode");
       formDark.classList.remove("dark-mode");
