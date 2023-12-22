@@ -20,7 +20,7 @@
     <!-- nav -->
     <nav class="nav header">
       <div class="nav-left">
-        <a href="" class="arrow">
+        <a href="#wheel" class="arrow">
           <i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>
         </a>
         <div class="logo">LOGO</div>
@@ -28,7 +28,7 @@
           <img src="images/—Pngtree—creative company_1420804.png" alt="logo">
         </div>
         <label class="switch">
-          <input type="checkbox" checked />
+          <input type="checkbox" id="darkModeToggle" />
           <span class="slider round">
             <i class="fa fa-moon-o" aria-hidden="true"></i>
             <i class="fa fa-sun-o sun" aria-hidden="true"></i>
@@ -38,25 +38,25 @@
 
       <ul class="nav-list">
         <li>
-          <a href="#wheel" class="nav-link">
+          <a href="#wheel" class="links" class="nav-link">
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
             <span>Mail</span>
           </a>
         </li>
         <li>
-          <a href="#wheel" class="nav-link">
+          <a href="#wheel" class="links" class="nav-link">
             <i class="fa fa-play" aria-hidden="true"></i>
             <span>TV online</span>
           </a>
         </li>
         <li>
-          <a href="#wheel" class="nav-link">
+          <a href="#wheel" class="links" class="nav-link">
             <i class="fa fa-television" aria-hidden="true"></i>
             <span>TV-music</span>
           </a>
         </li>
         <li>
-          <a href="#wheel" class="nav-link">
+          <a href="#wheel" class="links" class="nav-link">
             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
             <span>User</span>
           </a>
@@ -72,19 +72,19 @@
     <div class="container">
       <div class="sidebar">
         <ul>
-          <li><a href="#wheel">Haboru ukrajanaban</a></li>
-          <li><a href="#wheel">Legujabb</a></li>
-          <li><a href="#wheel">Lengyelorszag</a></li>
-          <li><a href="#wheel">Vilag</a></li>
-          <li><a href="#wheel">Europai Atalakitas</a></li>
-          <li><a href="#wheel">Iranyelv</a></li>
-          <li><a href="#wheel">Tarsadalom</a></li>
-          <li><a href="#wheel">Tortenelem</a></li>
-          <li><a href="#wheel">Ujsagiras</a></li>
-          <li><a href="#wheel">Idojaras</a></li>
-          <li><a href="#wheel">Video</a></li>
-          <li><a href="#wheel">Regionalis</a></li>
-          <li><a href="#wheel">Koronavirus</a></li>
+          <li><a class="links" href="#wheel">Haboru ukrajanaban</a></li>
+          <li><a class="links" href="#wheel">Legujabb</a></li>
+          <li><a class="links" href="#wheel">Lengyelorszag</a></li>
+          <li><a class="links" href="#wheel">Vilag</a></li>
+          <li><a class="links" href="#wheel">Europai Atalakitas</a></li>
+          <li><a class="links" href="#wheel">Iranyelv</a></li>
+          <li><a class="links" href="#wheel">Tarsadalom</a></li>
+          <li><a class="links" href="#wheel">Tortenelem</a></li>
+          <li><a class="links" href="#wheel">Ujsagiras</a></li>
+          <li><a class="links" href="#wheel">Idojaras</a></li>
+          <li><a class="links" href="#wheel">Video</a></li>
+          <li><a class="links" href="#wheel">Regionalis</a></li>
+          <li><a class="links" href="#wheel">Koronavirus</a></li>
         </ul>
       </div>
 
@@ -101,8 +101,8 @@
               src="images/5eb0205c573fa4767ebd76d5_babulita.jpeg"
               alt="photo"
             />
-            <span>Andor Eva</span>
-            <span class="date">10.12.2023 10:56</span>
+            <span class="bg-dark">Andor Eva</span>
+            <span class="date bg-dark">10.12.2023 10:56</span>
           </div>
           <div class="content-date__likes">
             <div class="like green">
@@ -519,7 +519,7 @@
         <div class="comment">
           <h2>Hozzaszolasok</h2>
 
-          <div class="comment-field">
+          <div class="comment-field bg-dark">
             <div class="user-photo">
               <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
             </div>
@@ -535,13 +535,13 @@
 
           <div class="comments">
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa40bbdbd76c4_1_11.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Ana Constantin</h5>
+                  <h5 class="color-dark">Ana Constantin</h5>
                   <span>Budapest</span>
                 </div>
                 <div class="comments-info__comment">
@@ -550,22 +550,22 @@
                    înrăutățește. Am comandat Oculax.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa4274ebd76bf_2_12.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Marian Cursaru</h5>
+                  <h5 class="color-dark">Marian Cursaru</h5>
                   <span>Debresen</span>
                 </div>
                 <div class="comments-info__comment">
@@ -575,22 +575,22 @@
                   ca acesta...
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa468a1bd76c5_3m.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Daniel Velișcu</h5>
+                  <h5 class="color-dark">Daniel Velișcu</h5>
                   <span>Szeged</span>
                 </div>
                 <div class="comments-info__comment">
@@ -598,22 +598,22 @@
                   Când va ajunge, voi încerca și după aia vă scriu părerea mea.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark"  href="#">Like</a>
+                  <a class="color-dark"  href="#">Valasz</a>
+                  <a class="color-dark"  href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa44873bd76da_6w.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Cristina Slav</h5>
+                  <h5 class="color-dark">Cristina Slav</h5>
                   <span>Szekesfehervar</span>
                 </div>
                 <div class="comments-info__comment">
@@ -621,22 +621,22 @@
                   Ei au vorbit acolo și despre Oculax. Mulți doctori l-au recomandat.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa42cedbd76d6_5_15.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Diana Stanciu</h5>
+                  <h5 class="color-dark">Diana Stanciu</h5>
                   <span>Debresen</span>
                 </div>
                 <div class="comments-info__comment">
@@ -646,44 +646,44 @@
                     tratament, și chiar și doctorul a confirmat asta. Suntem foarte mulțumiți de Oculax.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa459d7bd76c6_8_18.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Rebeca Toma</h5>
+                  <h5 class="color-dark">Rebeca Toma</h5>
                   <span>Pecs</span>
                 </div>
                 <div class="comments-info__comment">
                   Am comandat. De fapt, la ofertă este destul de ieftin.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark"href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa42b60bd76c3_9_19.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Corina Achim</h5>
+                  <h5 class="color-dark">Corina Achim</h5>
                   <span>Budapest</span>
                 </div>
                 <div class="comments-info__comment">
@@ -691,22 +691,22 @@
                    Câteva dintre cunoștințele mele l-au luat și l-au lăudat.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa43abcbd76d0_7_17.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Cristian Geambașu</h5>
+                  <h5 class="color-dark">Cristian Geambașu</h5>
                   <span>Debresen</span>
                 </div>
                 <div class="comments-info__comment">
@@ -718,22 +718,22 @@
                   Recomand tuturor! Cel puțin, merită încercat.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa47517bd76cb_6_16.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Andrei Baicu</h5>
+                  <h5 class="color-dark">Andrei Baicu</h5>
                   <span>Szeged</span>
                 </div>
                 <div class="comments-info__comment">
@@ -742,44 +742,44 @@
                    suferă deja de 2 ani. Totul se cangrenează și nu se mai reface.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa43d6cbd76c9_11_111.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Nina Gogan</h5>
+                  <h5 class="color-dark">Nina Gogan</h5>
                   <span>Szekesfehervar</span>
                 </div>
                 <div class="comments-info__comment">
                   Mulțumesc!
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/15.jpg" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Mariana Popescu</h5>
+                  <h5 class="color-dark">Mariana Popescu</h5>
                   <span>Debresen</span>
                 </div>
                 <div class="comments-info__comment">
@@ -790,31 +790,31 @@
                     fără vreo operație.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
             </div>
 
             <!-- Comment -->
-            <div class="comments-field">
+            <div class="comments-field bg-dark">
               <div class="comments-photo">
                 <img src="images/users-photos/5eb0205c573fa43f9bbd76cd_14_114.webp" alt="user">
               </div>
               <div class="comments-info">
                 <div class="comments-info__top">
-                  <h5>Andreea Enache</h5>
+                  <h5 class="color-dark">Andreea Enache</h5>
                   <span>Pecs</span>
                 </div>
                 <div class="comments-info__comment">
                   Azi am primit coletul. Totul este în regulă. A venit repede. A ieșit foarte ieftin. Deja am început să iau.
                 </div>
                 <div class="comments-info__bottom">
-                  <a href="#">Like</a>
-                  <a href="#">Valasz</a>
-                  <a href="#">Ossza</a>
+                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date">15 december 2023</span>
                 </div>
               </div>
@@ -827,7 +827,7 @@
 
     <footer class="footer">
       <div class="logo">LOGO</div>
-      <a href="#">Adatvedelmi iranyelvek</a>
+      <a href="#" class="links">Adatvedelmi iranyelvek</a>
     </footer>
 
     <!-- Popup -->

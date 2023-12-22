@@ -4,10 +4,63 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Open Sans", sans-serif;
+  transition: background-color 0.1s, color 0.1s;
 }
 
 :root {
   --grey: rgb(128, 128, 128);
+  --grey-dark: rgb(160, 160, 160);
+}
+
+.links.dark-mode {
+  color: var(--grey-dark);
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.nav.dark-mode {
+  background-color: #121212;
+  box-shadow: 0 8px 5px rgba(211, 180, 4, 0.308);
+  color: var(--grey-dark);
+}
+
+.sidebar.dark-mode {
+  color: var(--grey-dark);
+}
+
+.bg-dark.dark-mode {
+  background-color: #444444;
+}
+
+.color-dark.dark-mode {
+  color: #017acc;
+}
+
+.info-desk.dark-mode {
+  color: #000;
+}
+
+.warning.dark-mode {
+  color: #000;
+}
+
+.wheel__cursor-text.dark-mode {
+  color: #000;
+}
+
+.popup.dark-mode {
+  color: #000;
+}
+
+#order_form.dark-mode {
+  color: #000;
+}
+
+.form.dark-mode {
+  color: #000;
 }
 
 a {
@@ -59,6 +112,7 @@ a {
 
 .logo-img {
   display: block;
+  height: fit-content;
 }
 
 .logo-center {
@@ -67,12 +121,8 @@ a {
 }
 
 .logo-img img {
-  width: 50px;
-}
-
-.dark-mode {
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  display: none;
+  height: fit-content;
   width: 50px;
 }
 
@@ -85,7 +135,7 @@ a {
   display: inline-block;
   width: 45px;
   height: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--grey);
   border-radius: 15px;
 }
 
@@ -104,7 +154,6 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000000;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -114,7 +163,7 @@ a {
   content: "";
   height: 18px;
   width: 18px;
-  left: 2px;
+  left: 23px;
   bottom: 2px;
   background-color: rgb(172, 172, 172);
   -webkit-transition: 0.4s;
@@ -122,13 +171,13 @@ a {
 }
 
 input:checked + .slider {
-  background-color: #fff;
+  background-color: #000;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(22px);
-  -ms-transform: translateX(22px);
-  transform: translateX(22px);
+  -webkit-transform: translateX(-21px);
+  -ms-transform: translateX(-21px);
+  transform: translateX(-21px);
 }
 
 .slider i {
