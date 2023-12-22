@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const orderForm = document.querySelector("#order_form");
   const formDark = document.querySelector(".form");
   const wheelCursor = document.querySelector(".wheel__cursor-text");
-  const links = document.querySelectorAll(".links");
   const bgColor = document.querySelectorAll(".bg-dark");
   const colorDark = document.querySelectorAll(".color-dark");
 
@@ -97,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     orderForm.classList.add("dark-mode");
     formDark.classList.add("dark-mode");
     warning.classList.add("dark-mode");
-    links.forEach((e) => {
+    navLink.forEach((e) => {
       e.classList.add("dark-mode");
     });
     colorDark.forEach((e) => {
@@ -122,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
       orderForm.classList.add("dark-mode");
       formDark.classList.add("dark-mode");
       infoDesk.classList.add("dark-mode");
-      links.forEach((e) => {
+      navLink.forEach((e) => {
         e.classList.add("dark-mode");
       });
       colorDark.forEach((e) => {
@@ -143,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       warning.classList.remove("dark-mode");
       formDark.classList.remove("dark-mode");
       popupDark.classList.remove("dark-mode");
-      links.forEach((e) => {
+      navLink.forEach((e) => {
         e.classList.remove("dark-mode");
       });
       colorDark.forEach((e) => {

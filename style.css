@@ -11,8 +11,9 @@
   --grey-dark: rgb(160, 160, 160);
 }
 
-.links.dark-mode {
+.nav-link.dark-mode {
   color: var(--grey-dark);
+  background-color: #121212;
 }
 
 body.dark-mode {
