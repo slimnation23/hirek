@@ -266,6 +266,7 @@ function addComment() {
     commentField.style.display = "none";
     commentsList.style.display = "flex";
   } else {
+    errorMessage.style.display = 'block'
       errorMessage.textContent = "Please enter values.";
   }
 

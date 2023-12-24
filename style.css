@@ -1687,7 +1687,9 @@ span.inL_211661 span {
 }
 
 #error-message {
+  display: none;
   color: red;
+  margin-bottom: 0;
 }
 
 .user-photo {
