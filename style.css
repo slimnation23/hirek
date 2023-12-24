@@ -16,6 +16,10 @@
   background-color: #121212;
 }
 
+.links.dark-mode {
+  color: var(--grey-dark);
+}
+
 body.dark-mode {
   background-color: #121212;
   color: #fff;
@@ -590,7 +594,7 @@ nav ul li a:hover {
   border-radius: 18%;
 }
 
-.sidebar ul li a {
+.links {
   color: #000;
   text-transform: uppercase;
 }

@@ -36,6 +36,34 @@ btnSubmit.addEventListener("click", () => {
   wheelWrapper.style.display = "none";
 });
 
+//Actual date
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to get the current date and time in a formatted string
+  function getCurrentDateTime() {
+    const currentDateTime = new Date();
+    const options = {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    };
+    return currentDateTime
+      .toLocaleDateString("en-US", options)
+      .replace(/\//g, "-");
+  }
+
+  // Update the content of the date and time container with the current date and time
+  function updateDateTimeContainer() {
+    const datetimeContainer = document.querySelector(".date");
+    datetimeContainer.textContent = getCurrentDateTime();
+  }
+
+  // Call the function initially
+  updateDateTimeContainer();
+});
+
 // Menu toggle
 const menuBtn = document.querySelector(".menu-toggle");
 const navList = document.querySelector(".nav-list");
@@ -83,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const wheelCursor = document.querySelector(".wheel__cursor-text");
   const bgColor = document.querySelectorAll(".bg-dark");
   const colorDark = document.querySelectorAll(".color-dark");
+  const links = document.querySelectorAll(".links");
 
   // Check the user's preference from localStorage
   if (localStorage.getItem("dark-mode") === "enabled") {
@@ -103,6 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
       e.classList.add("dark-mode");
     });
     bgColor.forEach((e) => {
+      e.classList.add("dark-mode");
+    });
+    links.forEach((e) => {
       e.classList.add("dark-mode");
     });
     darkModeToggle.checked = true;
@@ -130,6 +162,9 @@ document.addEventListener("DOMContentLoaded", function () {
       bgColor.forEach((e) => {
         e.classList.add("dark-mode");
       });
+      links.forEach((e) => {
+        e.classList.add("dark-mode");
+      });
       localStorage.setItem("dark-mode", "enabled");
     } else {
       body.classList.remove("dark-mode");
@@ -149,6 +184,9 @@ document.addEventListener("DOMContentLoaded", function () {
         e.classList.remove("dark-mode");
       });
       bgColor.forEach((e) => {
+        e.classList.remove("dark-mode");
+      });
+      links.forEach((e) => {
         e.classList.remove("dark-mode");
       });
       localStorage.setItem("dark-mode", "disabled");
