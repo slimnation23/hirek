@@ -43,6 +43,10 @@ body.dark-mode {
   background-color: #444444;
 }
 
+#comments-list.dark-mode {
+  background-color: #444444;
+}
+
 .color-dark.dark-mode {
   color: #017acc;
 }

@@ -152,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const warning = document.querySelector(".warning");
   const popupDark = document.querySelector(".popup");
   const orderForm = document.querySelector("#order_form");
+  const commentsList = document.querySelector("#comments-list");
   const formDark = document.querySelector(".form");
   const wheelCursor = document.querySelector(".wheel__cursor-text");
   const bgColor = document.querySelectorAll(".bg-dark");
@@ -163,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.add("dark-mode");
     nav.classList.add("dark-mode");
     menuBtn.classList.add("dark-mode");
+    commentsList.classList.add("dark-mode");
     navList.classList.add("dark-mode");
     wheelCursor.classList.add("dark-mode");
     infoDesk.classList.add("dark-mode");
@@ -190,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (darkModeToggle.checked) {
       body.classList.add("dark-mode");
       nav.classList.add("dark-mode");
+      commentsList.classList.add("dark-mode");
       menuBtn.classList.add("dark-mode");
       navList.classList.add("dark-mode");
       wheelCursor.classList.add("dark-mode");
@@ -214,7 +217,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       body.classList.remove("dark-mode");
       nav.classList.remove("dark-mode");
-      menuBtn.classList.remove("dark-mode");
+      nav.classList.remove("dark-mode");
+      commentsList.classList.remove("dark-mode");
       wheelCursor.classList.remove("dark-mode");
       infoDesk.classList.remove("dark-mode");
       navList.classList.remove("dark-mode");
@@ -266,8 +270,16 @@ function addComment() {
     commentField.style.display = "none";
     commentsList.style.display = "flex";
   } else {
-    errorMessage.style.display = 'block'
-      errorMessage.textContent = "Please enter values.";
+    errorMessage.style.display = "block";
+    errorMessage.textContent = "Please enter values.";
+  }
+
+  const colorDark = document.querySelectorAll(".color-dark");
+
+  if (localStorage.getItem("dark-mode") === "enabled") {
+    colorDark.forEach((e) => {
+      e.classList.add("dark-mode");
+    });
   }
 
   function getDate0Days() {
@@ -287,10 +299,10 @@ function addComment() {
   const like = document.getElementById("add-like");
 
   like.addEventListener("click", (e) => {
-      e.preventDefault();
-      like.classList.toggle('bold');
-    });
-  };
+    e.preventDefault();
+    like.classList.toggle("bold");
+  });
+}
 
 // Add like in comments
 const like = document.querySelectorAll(".add-like");
@@ -298,8 +310,6 @@ const like = document.querySelectorAll(".add-like");
 like.forEach((e) => {
   e.addEventListener("click", (event) => {
     event.preventDefault();
-    e.classList.toggle('bold');
+    e.classList.toggle("bold");
   });
 });
-
-
