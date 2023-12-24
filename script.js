@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentDate = new Date();
     currentDate.setDate(currentDate.getDate() - 1);
 
-    const options = { year: 'numeric', month: 'long', day: '2-digit' };
-    return currentDate.toLocaleDateString('en-US', options).replace(/\//g, '-');
-}
+    const options = { year: "numeric", month: "long", day: "2-digit" };
+    return currentDate.toLocaleDateString("en-US", options).replace(/\//g, "-");
+  }
 
   // Update the content of the date container with the date three days ago
   function updateDateContainer() {
@@ -238,3 +238,67 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Add comment
+function addComment() {
+  const nameInput = document.getElementById("comment-name");
+  const textInput = document.getElementById("comment-text");
+  const commentsList = document.getElementById("comments-list");
+  const commentField = document.querySelector(".comment-field");
+  var errorMessage = document.getElementById("error-message");
+
+  const name = nameInput.value.trim();
+  const text = textInput.value.trim();
+
+  if (name !== "" && text !== "") {
+    const commentDiv = document.createElement("div");
+    commentDiv.className = "comment";
+    commentDiv.innerHTML = `<div><strong>${name}</strong> <br /> ${text}</div>
+      <div class="comments-info__bottom">
+                  <a class="color-dark" id="add-like" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
+                  <span class="date0"></span>
+                </div>`;
+
+    commentsList.appendChild(commentDiv);
+
+    commentField.style.display = "none";
+    commentsList.style.display = "flex";
+  } else {
+      errorMessage.textContent = "Please enter values.";
+  }
+
+  function getDate0Days() {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate());
+
+    const options = { year: "numeric", month: "long", day: "2-digit" };
+    return currentDate.toLocaleDateString("en-US", options).replace(/\//g, "-");
+  }
+  function updateActualDateContainer() {
+    const dateContainer3 = document.querySelector(".date0");
+    dateContainer3.textContent = getDate0Days();
+  }
+
+  updateActualDateContainer();
+
+  const like = document.getElementById("add-like");
+
+  like.addEventListener("click", (e) => {
+      e.preventDefault();
+      like.classList.toggle('bold');
+    });
+  };
+
+// Add like in comments
+const like = document.querySelectorAll(".add-like");
+
+like.forEach((e) => {
+  e.addEventListener("click", (event) => {
+    event.preventDefault();
+    e.classList.toggle('bold');
+  });
+});
+
+

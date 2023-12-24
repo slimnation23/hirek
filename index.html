@@ -428,7 +428,7 @@
             </center>
 
             <span class="count inL_712825"
-              >№982 din 1000 pe <span class="date0"></span>
+              >№982 din 1000 pe <span class="date"></span>
             </span>
             <div>
               <span class="text1 inL_491037"
@@ -524,12 +524,19 @@
               <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
             </div>
             <div class="add-comment">
-              <input type="text" placeholder="Numele meu">
-              <input type="text" placeholder="Mesaj">
+              <input id="comment-name" type="text" placeholder="Numele meu">
+              <input id="comment-text" type="text" placeholder="Mesaj">
+              <p id="error-message"></p>
               <div class="add-comment-bottom">
                 <span>Comentarii</span>
-                <button>Kuldes</button>
+                <button onclick="addComment()">Kuldes</button>
               </div>
+            </div>
+          </div>
+
+          <div id="comments-list">
+            <div class="user-photo">
+              <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
             </div>
           </div>
 
@@ -550,7 +557,7 @@
                    înrăutățește. Am comandat Oculax.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date1">15 december 2023</span>
@@ -575,7 +582,7 @@
                   ca acesta...
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date1">15 december 2023</span>
@@ -598,9 +605,9 @@
                   Când va ajunge, voi încerca și după aia vă scriu părerea mea.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark"  href="#">Like</a>
-                  <a class="color-dark"  href="#">Valasz</a>
-                  <a class="color-dark"  href="#">Ossza</a>
+                  <a class="color-dark add-like" href="#">Like</a>
+                  <a class="color-dark" href="#">Valasz</a>
+                  <a class="color-dark" href="#">Ossza</a>
                   <span class="date1">15 december 2023</span>
                 </div>
               </div>
@@ -621,7 +628,7 @@
                   Ei au vorbit acolo și despre Oculax. Mulți doctori l-au recomandat.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date2">15 december 2023</span>
@@ -646,7 +653,7 @@
                     tratament, și chiar și doctorul a confirmat asta. Suntem foarte mulțumiți de Oculax.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date2">15 december 2023</span>
@@ -668,7 +675,7 @@
                   Am comandat. De fapt, la ofertă este destul de ieftin.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark"href="#">Ossza</a>
                   <span class="date2">15 december 2023</span>
@@ -691,7 +698,7 @@
                    Câteva dintre cunoștințele mele l-au luat și l-au lăudat.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date2">15 december 2023</span>
@@ -718,7 +725,7 @@
                   Recomand tuturor! Cel puțin, merită încercat.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date3">15 december 2023</span>
@@ -742,7 +749,7 @@
                    suferă deja de 2 ani. Totul se cangrenează și nu se mai reface.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date3">15 december 2023</span>
@@ -764,7 +771,7 @@
                   Mulțumesc!
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date3">15 december 2023</span>
@@ -790,7 +797,7 @@
                     fără vreo operație.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date3">15 december 2023</span>
@@ -812,7 +819,7 @@
                   Azi am primit coletul. Totul este în regulă. A venit repede. A ieșit foarte ieftin. Deja am început să iau.
                 </div>
                 <div class="comments-info__bottom">
-                  <a class="color-dark" href="#">Like</a>
+                  <a class="color-dark add-like" href="#">Like</a>
                   <a class="color-dark" href="#">Valasz</a>
                   <a class="color-dark" href="#">Ossza</a>
                   <span class="date3">15 december 2023</span>

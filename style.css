@@ -1674,6 +1674,22 @@ span.inL_211661 span {
   margin-bottom: 25px;
 }
 
+#comments-list {
+  display: none;
+  padding: 10px 20px 20px 10px;
+  background-color: #e9ecf1;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#error-message {
+  color: red;
+}
+
 .user-photo {
   margin-right: 15px;
   background-color: #bec4d0;
