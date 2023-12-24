@@ -64,6 +64,51 @@ document.addEventListener("DOMContentLoaded", function () {
   updateDateTimeContainer();
 });
 
+// Comments date
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to get the date three days ago in a formatted string
+  function getDateMinus3Days() {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 3);
+
+    const options = { year: "numeric", month: "long", day: "2-digit" };
+    return currentDate.toLocaleDateString("en-US", options).replace(/\//g, "-");
+  }
+  function getDateMinus2Days() {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 2);
+
+    const options = { year: "numeric", month: "long", day: "2-digit" };
+    return currentDate.toLocaleDateString("en-US", options).replace(/\//g, "-");
+  }
+  function getDateMinus1Days() {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 1);
+
+    const options = { year: 'numeric', month: 'long', day: '2-digit' };
+    return currentDate.toLocaleDateString('en-US', options).replace(/\//g, '-');
+}
+
+  // Update the content of the date container with the date three days ago
+  function updateDateContainer() {
+    const dateContainer = document.querySelectorAll(".date3");
+    dateContainer.forEach((e) => {
+      e.textContent = getDateMinus3Days();
+    });
+    const dateContainer1 = document.querySelectorAll(".date2");
+    dateContainer1.forEach((e) => {
+      e.textContent = getDateMinus2Days();
+    });
+    const dateContainer2 = document.querySelectorAll(".date1");
+    dateContainer2.forEach((e) => {
+      e.textContent = getDateMinus1Days();
+    });
+  }
+
+  // Call the function initially
+  updateDateContainer();
+});
+
 // Menu toggle
 const menuBtn = document.querySelector(".menu-toggle");
 const navList = document.querySelector(".nav-list");
