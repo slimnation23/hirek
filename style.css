@@ -75,11 +75,6 @@ body.dark-mode {
   color: #000;
 }
 
-.menu-toggle.dark-mode {
-  background-color: #000;
-  color: var(--grey-dark);
-}
-
 a {
   text-decoration: none;
 }
@@ -1823,6 +1818,11 @@ span.inL_211661 span {
     position: relative;
     background-color: #fff;
     border: none;
+  }
+
+  .menu-toggle.dark-mode {
+    background-color: #000;
+    color: var(--grey-dark);
   }
 
   .menu-toggle span {

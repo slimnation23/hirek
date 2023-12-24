@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       body.classList.remove("dark-mode");
       nav.classList.remove("dark-mode");
-      nav.classList.remove("dark-mode");
+      menuBtn.classList.remove("dark-mode");
       commentsList.classList.remove("dark-mode");
       wheelCursor.classList.remove("dark-mode");
       infoDesk.classList.remove("dark-mode");
