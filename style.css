@@ -651,6 +651,7 @@ nav ul li a:hover {
   text-transform: uppercase;
   padding: 2px 5px;
   border-radius: 2px;
+  margin-right: 5px;
 }
 
 .like {
