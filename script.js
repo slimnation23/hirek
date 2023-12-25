@@ -207,6 +207,22 @@ if (localStorage.getItem("dark-mode") === "enabled") {
 darkModeToggle.addEventListener("change", toggleDarkMode);
 
 // Add comment
+function getDate0Days() {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate());
+
+  const options = { year: "numeric", month: "long", day: "2-digit" };
+  return currentDate.toLocaleDateString(options).replace(/\//g, "-");
+}
+function updateActualDateContainer() {
+  const dateContainer3 = document.querySelectorAll(".date0");
+  dateContainer3.forEach((e) => {
+    e.textContent = getDate0Days();
+  });
+}
+
+updateActualDateContainer();
+
 function addComment() {
   const nameInput = document.getElementById("comment-name");
   const textInput = document.getElementById("comment-text");
@@ -240,6 +256,8 @@ function addComment() {
     errorMessage.textContent = "Please enter values.";
   }
 
+  updateActualDateContainer();
+
   const colorDark = document.querySelectorAll(".color-dark");
 
   if (localStorage.getItem("dark-mode") === "enabled") {
@@ -247,22 +265,6 @@ function addComment() {
       e.classList.add("dark-mode");
     });
   }
-
-  function getDate0Days() {
-    const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate());
-
-    const options = { year: "numeric", month: "long", day: "2-digit" };
-    return currentDate.toLocaleDateString(options).replace(/\//g, "-");
-  }
-  function updateActualDateContainer() {
-    const dateContainer3 = document.querySelectorAll(".date0");
-    dateContainer3.forEach((e) => {
-      e.textContent = getDate0Days();
-    });
-  }
-
-  updateActualDateContainer();
 
   const like = document.getElementById("add-like");
 
