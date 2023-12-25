@@ -621,6 +621,8 @@ nav ul li a:hover {
 
 .img-comment {
   margin-bottom: 30px;
+  text-align: center;
+  font-style: italic;
 }
 
 .content-date {
@@ -1940,5 +1942,5 @@ span.inL_211661 span {
   }
   .prod_img {
     width: 100% !important;
-  };
+  }
 }
