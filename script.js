@@ -276,10 +276,12 @@ function handleLikeClick(event) {
     updateLikes(greenContainer, 1);
     greenContainer.classList.add("clicked");
     redContainerDisabled.classList.add("disabled");
-  } else if (redContainer && !redContainer.classList.contains("clicked")) {
+    document.removeEventListener("click", handleLikeClick);
+  } if (redContainer && !redContainer.classList.contains("clicked")) {
     updateLikes(redContainer, 1);
     redContainer.classList.add("clicked");
     greenContainerDisabled.classList.add("disabled");
+    document.removeEventListener("click", handleLikeClick);
   }
 }
 
