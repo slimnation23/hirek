@@ -46,7 +46,7 @@ function startTimer(duration, display) {
 
     if (--timer < 0) {
       // You can add a message or perform an action when the timer reaches zero
-      display.textContent = "Time's up!";
+      display.textContent = "00:00";
       // Alternatively, you can restart the timer
       // timer = duration;
     }
