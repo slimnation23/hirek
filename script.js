@@ -237,7 +237,7 @@ function addComment() {
     const commentDiv = document.createElement("div");
     commentDiv.className = "comment";
     commentDiv.innerHTML = `<div class="comments-info__top">
-        <H5>${name}</H5>
+        <H5 class="color-dark">${name}</H5>
      </div>
     <div class="comments-info__comment">${text}</div>
     <div class="comments-info__bottom">
