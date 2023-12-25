@@ -42,17 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to get the current date and time in a formatted string
   function getCurrentDateTime() {
     const currentDateTime = new Date();
+    currentDateTime.setDate(currentDateTime.getDate() - 7);
     const options = {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
     };
-    return currentDateTime
-      .toLocaleDateString("en-US", options)
-      .replace(/\//g, "-");
+    return currentDateTime.toLocaleDateString(options).replace(/\//g, "-");
   }
 
   // Update the content of the date and time container with the current date and time
@@ -68,47 +64,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Comments dates
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to get the date three days ago in a formatted string
-  function getDateMinus3Days() {
+  function getDateMinusDays(days) {
     const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() - 3);
+    currentDate.setDate(currentDate.getDate() - days);
 
     const options = { year: "numeric", month: "long", day: "2-digit" };
-    return currentDate.toLocaleDateString("en-US", options).replace(/\//g, "-");
-  }
-  function getDateMinus2Days() {
-    const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() - 2);
-
-    const options = { year: "numeric", month: "long", day: "2-digit" };
-    return currentDate.toLocaleDateString("en-US", options).replace(/\//g, "-");
-  }
-  function getDateMinus1Days() {
-    const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() - 1);
-
-    const options = { year: "numeric", month: "long", day: "2-digit" };
-    return currentDate.toLocaleDateString("en-US", options).replace(/\//g, "-");
+    return currentDate.toLocaleDateString(options).replace(/\//g, "-");
   }
 
-  // Update the content of the date container with the date three days ago
-  function updateDateContainer() {
-    const dateContainer = document.querySelectorAll(".date3");
-    dateContainer.forEach((e) => {
-      e.textContent = getDateMinus3Days();
-    });
-    const dateContainer1 = document.querySelectorAll(".date2");
-    dateContainer1.forEach((e) => {
-      e.textContent = getDateMinus2Days();
-    });
-    const dateContainer2 = document.querySelectorAll(".date1");
-    dateContainer2.forEach((e) => {
-      e.textContent = getDateMinus1Days();
-    });
+  function updateDateContainers() {
+    for (let i = 1; i <= 7; i++) {
+      const dateContainer = document.querySelectorAll(`.date${i}`);
+      dateContainer.forEach((e) => {
+        e.textContent = getDateMinusDays(i);
+      });
+    }
   }
 
   // Call the function initially
-  updateDateContainer();
+  updateDateContainers();
 });
 // Comments dates
 
@@ -179,7 +153,8 @@ const elements = [
 const arrays = [navLink, colorDark, bgColor, links];
 
 const addClassForElement = (element) => element.classList.add("dark-mode");
-const removeClassForElement = (element) => element.classList.remove("dark-mode");
+const removeClassForElement = (element) =>
+  element.classList.remove("dark-mode");
 
 const addClassForArray = (array) => array.forEach(addClassForElement);
 const removeClassForArray = (array) => array.forEach(removeClassForElement);
@@ -188,13 +163,13 @@ const toggleDarkMode = () => {
   const toggleValue = darkModeToggle.checked;
 
   if (toggleValue) {
-      elements.forEach((element) => addClassForElement(element));
-      arrays.forEach((array) => addClassForArray(array));
-      localStorage.setItem("dark-mode", "enabled");
+    elements.forEach((element) => addClassForElement(element));
+    arrays.forEach((array) => addClassForArray(array));
+    localStorage.setItem("dark-mode", "enabled");
   } else {
-      elements.forEach((element) => removeClassForElement(element));
-      arrays.forEach((array) => removeClassForArray(array));
-      localStorage.setItem("dark-mode", "disabled");
+    elements.forEach((element) => removeClassForElement(element));
+    arrays.forEach((array) => removeClassForArray(array));
+    localStorage.setItem("dark-mode", "disabled");
   }
 };
 
@@ -219,13 +194,16 @@ function addComment() {
   if (name !== "" && text !== "") {
     const commentDiv = document.createElement("div");
     commentDiv.className = "comment";
-    commentDiv.innerHTML = `<div><strong>${name}</strong> <br /> ${text}</div>
-      <div class="comments-info__bottom">
-                  <a class="color-dark" id="add-like" href="#">Like</a>
-                  <a class="color-dark" href="#">Valasz</a>
-                  <a class="color-dark" href="#">Ossza</a>
-                  <span class="date0"></span>
-                </div>`;
+    commentDiv.innerHTML = `<div class="comments-info__top">
+        <H5>${name}</H5>
+     </div>
+    <div class="comments-info__comment">${text}</div>
+    <div class="comments-info__bottom">
+        <a class="color-dark" id="add-like" href="#">Like</a>
+        <a class="color-dark" href="#">Valasz</a>
+        <a class="color-dark" href="#">Ossza</a>
+        <span class="date0"></span>
+      </div>`;
 
     commentsList.appendChild(commentDiv);
 
@@ -249,7 +227,7 @@ function addComment() {
     currentDate.setDate(currentDate.getDate());
 
     const options = { year: "numeric", month: "long", day: "2-digit" };
-    return currentDate.toLocaleDateString("en-US", options).replace(/\//g, "-");
+    return currentDate.toLocaleDateString(options).replace(/\//g, "-");
   }
   function updateActualDateContainer() {
     const dateContainer3 = document.querySelector(".date0");
@@ -277,3 +255,48 @@ like.forEach((e) => {
   });
 });
 // Add like in comments
+
+// Add like or dislike
+document.addEventListener("DOMContentLoaded", function () {
+  function updateLikes(type, count) {
+    const likeContainer = document.querySelector(`.like.${type}`);
+    const likeSpan = likeContainer.querySelector('span');
+
+    // Get the current like count
+    let currentLikes = parseInt(likeSpan.textContent);
+
+    // Update the like count
+    currentLikes += count;
+
+    // Update the DOM with the new like count
+    likeSpan.textContent = currentLikes;
+  }
+
+  function handleLikeClick(event) {
+    const clickedElement = event.target;
+
+    // Check if the clicked element is an <i> tag inside a like container
+    if (clickedElement.tagName === 'I' && clickedElement.parentElement.classList.contains('like')) {
+      if (clickedElement.parentElement.classList.contains('green')) {
+        let likeType = 'green';
+      } else {
+        let likeType = 'red';
+      }
+      
+      let likeCount;
+      if (clickedElement.classList.contains('fa-thumbs-o-up')) {
+        likeCount = 1; // Increment likes when thumbs-up is clicked
+      } else {
+        likeCount = -1; // Decrement likes when thumbs-down is clicked
+      }
+      
+
+      // Update the likes
+      updateLikes(likeType, likeCount);
+    }
+  }
+
+  // Add a click event listener to the entire document
+  document.addEventListener('click', handleLikeClick);
+});
+
