@@ -38,52 +38,51 @@ btnSubmit.addEventListener("click", () => {
 // Spin circle
 
 //Post date
-document.addEventListener("DOMContentLoaded", function () {
-  // Function to get the current date and time in a formatted string
-  function getCurrentDateTime() {
-    const currentDateTime = new Date();
-    currentDateTime.setDate(currentDateTime.getDate() - 7);
-    const options = {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    };
-    return currentDateTime.toLocaleDateString(options).replace(/\//g, "-");
-  }
+// Function to get the current date and time in a formatted string
+function getCurrentDateTime() {
+  const currentDateTime = new Date();
+  currentDateTime.setDate(currentDateTime.getDate() - 7);
+  const options = {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  };
+  return currentDateTime.toLocaleDateString(options).replace(/\//g, "-");
+}
 
-  // Update the content of the date and time container with the current date and time
-  function updateDateTimeContainer() {
-    const datetimeContainer = document.querySelector(".date");
-    datetimeContainer.textContent = getCurrentDateTime();
-  }
+// Update the content of the date and time container with the current date and time
+function updateDateTimeContainer() {
+  const datetimeContainer = document.querySelector(".date");
+  datetimeContainer.textContent = getCurrentDateTime();
+}
 
-  // Call the function initially
-  updateDateTimeContainer();
-});
+// Call the function initially
+updateDateTimeContainer();
+
 //Post date
 
 // Comments dates
-document.addEventListener("DOMContentLoaded", function () {
-  function getDateMinusDays(days) {
-    const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() - days);
 
-    const options = { year: "numeric", month: "long", day: "2-digit" };
-    return currentDate.toLocaleDateString(options).replace(/\//g, "-");
+function getDateMinusDays(days) {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() - days);
+
+  const options = { year: "numeric", month: "long", day: "2-digit" };
+  return currentDate.toLocaleDateString(options).replace(/\//g, "-");
+}
+
+function updateDateContainers() {
+  for (let i = 1; i <= 7; i++) {
+    const dateContainer = document.querySelectorAll(`.date${i}`);
+    dateContainer.forEach((e) => {
+      e.textContent = getDateMinusDays(i);
+    });
   }
+}
 
-  function updateDateContainers() {
-    for (let i = 1; i <= 7; i++) {
-      const dateContainer = document.querySelectorAll(`.date${i}`);
-      dateContainer.forEach((e) => {
-        e.textContent = getDateMinusDays(i);
-      });
-    }
-  }
+// Call the function initially
+updateDateContainers();
 
-  // Call the function initially
-  updateDateContainers();
-});
 // Comments dates
 
 // Menu toggle
@@ -257,46 +256,32 @@ like.forEach((e) => {
 // Add like in comments
 
 // Add like or dislike
-document.addEventListener("DOMContentLoaded", function () {
-  function updateLikes(type, count) {
-    const likeContainer = document.querySelector(`.like.${type}`);
-    const likeSpan = likeContainer.querySelector('span');
+function updateLikes(likeContainer, count) {
+  const likeSpan = likeContainer.querySelector("span");
+  let currentLikes = parseInt(likeSpan.textContent);
+  currentLikes += count;
+  likeSpan.textContent = currentLikes;
+}
 
-    // Get the current like count
-    let currentLikes = parseInt(likeSpan.textContent);
+function handleLikeClick(event) {
+  const clickedElement = event.target;
 
-    // Update the like count
-    currentLikes += count;
+  // Check if the clicked element or its ancestor is a "like" container with the "green" class
+  const greenContainer = clickedElement.closest(".like.green");
+  const redContainer = clickedElement.closest(".like.red");
+  const redContainerDisabled = document.querySelector(".red");
+  const greenContainerDisabled = document.querySelector(".green");
 
-    // Update the DOM with the new like count
-    likeSpan.textContent = currentLikes;
+  if (greenContainer && !greenContainer.classList.contains("clicked")) {
+    updateLikes(greenContainer, 1);
+    greenContainer.classList.add("clicked");
+    redContainerDisabled.classList.add("disabled");
+  } else if (redContainer && !redContainer.classList.contains("clicked")) {
+    updateLikes(redContainer, 1);
+    redContainer.classList.add("clicked");
+    greenContainerDisabled.classList.add("disabled");
   }
+}
 
-  function handleLikeClick(event) {
-    const clickedElement = event.target;
-
-    // Check if the clicked element is an <i> tag inside a like container
-    if (clickedElement.tagName === 'I' && clickedElement.parentElement.classList.contains('like')) {
-      if (clickedElement.parentElement.classList.contains('green')) {
-        let likeType = 'green';
-      } else {
-        let likeType = 'red';
-      }
-      
-      let likeCount;
-      if (clickedElement.classList.contains('fa-thumbs-o-up')) {
-        likeCount = 1; // Increment likes when thumbs-up is clicked
-      } else {
-        likeCount = -1; // Decrement likes when thumbs-down is clicked
-      }
-      
-
-      // Update the likes
-      updateLikes(likeType, likeCount);
-    }
-  }
-
-  // Add a click event listener to the entire document
-  document.addEventListener('click', handleLikeClick);
-});
-
+// Add a click event listener to the entire document
+document.addEventListener("click", handleLikeClick);
