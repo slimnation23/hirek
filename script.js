@@ -285,5 +285,21 @@ function handleLikeClick(event) {
   }
 }
 
-// Add a click event listener to the entire document
 document.addEventListener("click", handleLikeClick);
+
+// Actual dates in content
+function getActualDate() {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate());
+
+  const options = { year: "numeric", month: "long", day: "2-digit" };
+  return currentDate.toLocaleDateString(options).replace(/\//g, "-");
+}
+function updateActualDates() {
+  const dateContainerToday = document.querySelectorAll(".dateToday");
+  dateContainerToday.forEach((e) => {
+    e.textContent = getActualDate();
+  })
+}
+
+updateActualDates()
