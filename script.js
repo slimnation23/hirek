@@ -144,104 +144,60 @@ cancelBtn.addEventListener("click", () => {
 });
 
 // Dark mode
-document.addEventListener("DOMContentLoaded", function () {
-  const darkModeToggle = document.getElementById("darkModeToggle");
-  const body = document.body;
-  const nav = document.querySelector(".nav");
-  const infoDesk = document.querySelector(".info-desk");
-  const warning = document.querySelector(".warning");
-  const popupDark = document.querySelector(".popup");
-  const orderForm = document.querySelector("#order_form");
-  const commentsList = document.querySelector("#comments-list");
-  const formDark = document.querySelector(".form");
-  const wheelCursor = document.querySelector(".wheel__cursor-text");
-  const bgColor = document.querySelectorAll(".bg-dark");
-  const colorDark = document.querySelectorAll(".color-dark");
-  const links = document.querySelectorAll(".links");
+const darkModeToggle = document.getElementById("darkModeToggle");
+const body = document.body;
+const nav = document.querySelector(".nav");
+const infoDesk = document.querySelector(".info-desk");
+const warning = document.querySelector(".warning");
+const popupDark = document.querySelector(".popup");
+const orderForm = document.querySelector("#order_form");
+const commentsList = document.querySelector("#comments-list");
+const formDark = document.querySelector(".form");
+const wheelCursor = document.querySelector(".wheel__cursor-text");
+const bgColor = document.querySelectorAll(".bg-dark");
+const colorDark = document.querySelectorAll(".color-dark");
+const links = document.querySelectorAll(".links");
 
-  // Check the user's preference from localStorage
-  if (localStorage.getItem("dark-mode") === "enabled") {
-    body.classList.add("dark-mode");
-    nav.classList.add("dark-mode");
-    menuBtn.classList.add("dark-mode");
-    commentsList.classList.add("dark-mode");
-    navList.classList.add("dark-mode");
-    wheelCursor.classList.add("dark-mode");
-    infoDesk.classList.add("dark-mode");
-    popupDark.classList.add("dark-mode");
-    orderForm.classList.add("dark-mode");
-    formDark.classList.add("dark-mode");
-    warning.classList.add("dark-mode");
-    navLink.forEach((e) => {
-      e.classList.add("dark-mode");
-    });
-    colorDark.forEach((e) => {
-      e.classList.add("dark-mode");
-    });
-    bgColor.forEach((e) => {
-      e.classList.add("dark-mode");
-    });
-    links.forEach((e) => {
-      e.classList.add("dark-mode");
-    });
-    darkModeToggle.checked = true;
-  }
+const elements = [
+  body,
+  nav,
+  menuBtn,
+  commentsList,
+  navList,
+  wheelCursor,
+  infoDesk,
+  popupDark,
+  orderForm,
+  formDark,
+  warning,
+];
+const arrays = [navLink, colorDark, bgColor, links];
 
-  // Toggle dark mode
-  darkModeToggle.addEventListener("change", function () {
-    if (darkModeToggle.checked) {
-      body.classList.add("dark-mode");
-      nav.classList.add("dark-mode");
-      commentsList.classList.add("dark-mode");
-      menuBtn.classList.add("dark-mode");
-      navList.classList.add("dark-mode");
-      wheelCursor.classList.add("dark-mode");
-      warning.classList.add("dark-mode");
-      popupDark.classList.add("dark-mode");
-      orderForm.classList.add("dark-mode");
-      formDark.classList.add("dark-mode");
-      infoDesk.classList.add("dark-mode");
-      navLink.forEach((e) => {
-        e.classList.add("dark-mode");
-      });
-      colorDark.forEach((e) => {
-        e.classList.add("dark-mode");
-      });
-      bgColor.forEach((e) => {
-        e.classList.add("dark-mode");
-      });
-      links.forEach((e) => {
-        e.classList.add("dark-mode");
-      });
+const addClassForElement = (element) => element.classList.add("dark-mode");
+const removeClassForElement = (element) => element.classList.remove("dark-mode");
+
+const addClassForArray = (array) => array.forEach(addClassForElement);
+const removeClassForArray = (array) => array.forEach(removeClassForElement);
+
+const toggleDarkMode = () => {
+  const toggleValue = darkModeToggle.checked;
+
+  if (toggleValue) {
+      elements.forEach((element) => addClassForElement(element));
+      arrays.forEach((array) => addClassForArray(array));
       localStorage.setItem("dark-mode", "enabled");
-    } else {
-      body.classList.remove("dark-mode");
-      nav.classList.remove("dark-mode");
-      menuBtn.classList.remove("dark-mode");
-      commentsList.classList.remove("dark-mode");
-      wheelCursor.classList.remove("dark-mode");
-      infoDesk.classList.remove("dark-mode");
-      navList.classList.remove("dark-mode");
-      orderForm.classList.remove("dark-mode");
-      warning.classList.remove("dark-mode");
-      formDark.classList.remove("dark-mode");
-      popupDark.classList.remove("dark-mode");
-      navLink.forEach((e) => {
-        e.classList.remove("dark-mode");
-      });
-      colorDark.forEach((e) => {
-        e.classList.remove("dark-mode");
-      });
-      bgColor.forEach((e) => {
-        e.classList.remove("dark-mode");
-      });
-      links.forEach((e) => {
-        e.classList.remove("dark-mode");
-      });
+  } else {
+      elements.forEach((element) => removeClassForElement(element));
+      arrays.forEach((array) => removeClassForArray(array));
       localStorage.setItem("dark-mode", "disabled");
-    }
-  });
-});
+  }
+};
+
+if (localStorage.getItem("dark-mode") === "enabled") {
+  toggleDarkMode();
+}
+
+darkModeToggle.addEventListener("change", toggleDarkMode);
 
 // Add comment
 function addComment() {
