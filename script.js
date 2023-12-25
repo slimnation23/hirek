@@ -30,12 +30,41 @@ function spinWheel() {
 const showForm = document.querySelector(".order");
 const btnSubmit = document.querySelector(".btn--submit");
 
+// Timer in form
+function startTimer(duration, display) {
+  let timer = duration,
+    minutes,
+    seconds;
+  setInterval(function () {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+
+    if (--timer < 0) {
+      // You can add a message or perform an action when the timer reaches zero
+      display.textContent = "Time's up!";
+      // Alternatively, you can restart the timer
+      // timer = duration;
+    }
+  }, 1000);
+}
+
 btnSubmit.addEventListener("click", () => {
   showForm.style.display = "block";
   popup.style.display = "none";
   wheelWrapper.style.display = "none";
+
+  function timer () {
+    let initialTime = 9 * 60 + 50; // 9 minutes and 50 seconds
+    let display = document.getElementById("countdown");
+    startTimer(initialTime, display);
+  };
+  timer();
 });
-// Spin circle
 
 //Post date
 // Function to get the current date and time in a formatted string
@@ -62,7 +91,6 @@ updateDateTimeContainer();
 //Post date
 
 // Comments dates
-
 function getDateMinusDays(days) {
   const currentDate = new Date();
   currentDate.setDate(currentDate.getDate() - days);
@@ -177,7 +205,6 @@ if (localStorage.getItem("dark-mode") === "enabled") {
 }
 
 darkModeToggle.addEventListener("change", toggleDarkMode);
-// Dark mode
 
 // Add comment
 function addComment() {
@@ -229,8 +256,10 @@ function addComment() {
     return currentDate.toLocaleDateString(options).replace(/\//g, "-");
   }
   function updateActualDateContainer() {
-    const dateContainer3 = document.querySelector(".date0");
-    dateContainer3.textContent = getDate0Days();
+    const dateContainer3 = document.querySelectorAll(".date0");
+    dateContainer3.forEach((e) => {
+      e.textContent = getDate0Days();
+    });
   }
 
   updateActualDateContainer();
@@ -242,7 +271,6 @@ function addComment() {
     like.classList.toggle("bold");
   });
 }
-// Add comment
 
 // Add like in comments
 const like = document.querySelectorAll(".add-like");
@@ -253,7 +281,6 @@ like.forEach((e) => {
     e.classList.toggle("bold");
   });
 });
-// Add like in comments
 
 // Add like or dislike
 function updateLikes(likeContainer, count) {
@@ -277,7 +304,8 @@ function handleLikeClick(event) {
     greenContainer.classList.add("clicked");
     redContainerDisabled.classList.add("disabled");
     document.removeEventListener("click", handleLikeClick);
-  } if (redContainer && !redContainer.classList.contains("clicked")) {
+  }
+  if (redContainer && !redContainer.classList.contains("clicked")) {
     updateLikes(redContainer, 1);
     redContainer.classList.add("clicked");
     greenContainerDisabled.classList.add("disabled");
@@ -299,7 +327,7 @@ function updateActualDates() {
   const dateContainerToday = document.querySelectorAll(".dateToday");
   dateContainerToday.forEach((e) => {
     e.textContent = getActualDate();
-  })
+  });
 }
 
-updateActualDates()
+updateActualDates();

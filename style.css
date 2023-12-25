@@ -958,7 +958,7 @@ nav ul li a:hover {
 }
 
 .cancel-btn:hover {
-  background-color: #8A010B;
+  background-color: #8a010b;
 }
 
 .cancel-btn i {
@@ -1003,7 +1003,7 @@ nav ul li a:hover {
 }
 
 .form-content form button:hover {
-  background-color: #8A010B;
+  background-color: #8a010b;
 }
 
 .form-content span {
@@ -1767,6 +1767,10 @@ span.inL_211661 span {
   border-radius: 5px;
 }
 
+.comments-info {
+  width: 100%;
+}
+
 .comments-info__top {
   display: flex;
   align-items: center;
@@ -1788,6 +1792,10 @@ span.inL_211661 span {
 
 .comments-info__comment {
   margin-bottom: 5px;
+}
+
+.comments-info .comments-img {
+  width: 40%;
 }
 
 .comments-info__bottom a {
@@ -1913,6 +1921,12 @@ span.inL_211661 span {
   }
 }
 
+@media (max-width: 560px) {
+  .comments-info .comments-img {
+    width: 100%;
+  }
+}
+
 @media (max-width: 460px) {
   .wheel__cursor {
     width: 120px;
@@ -1926,5 +1940,5 @@ span.inL_211661 span {
   }
   .prod_img {
     width: 100% !important;
-  }
+  };
 }
