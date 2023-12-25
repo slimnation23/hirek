@@ -35,8 +35,9 @@ btnSubmit.addEventListener("click", () => {
   popup.style.display = "none";
   wheelWrapper.style.display = "none";
 });
+// Spin circle
 
-//Actual date
+//Post date
 document.addEventListener("DOMContentLoaded", function () {
   // Function to get the current date and time in a formatted string
   function getCurrentDateTime() {
@@ -63,8 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Call the function initially
   updateDateTimeContainer();
 });
+//Post date
 
-// Comments date
+// Comments dates
 document.addEventListener("DOMContentLoaded", function () {
   // Function to get the date three days ago in a formatted string
   function getDateMinus3Days() {
@@ -108,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Call the function initially
   updateDateContainer();
 });
+// Comments dates
 
 // Menu toggle
 const menuBtn = document.querySelector(".menu-toggle");
@@ -128,6 +131,7 @@ function toggleMenu() {
     });
   });
 }
+// Menu toggle
 
 // Form phone
 const phoneBtn = document.querySelector(".coccoc-alo-phone");
@@ -142,6 +146,7 @@ phoneBtn.addEventListener("click", (e) => {
 cancelBtn.addEventListener("click", () => {
   formPopup.style.display = "none";
 });
+// Form phone
 
 // Dark mode
 const darkModeToggle = document.getElementById("darkModeToggle");
@@ -198,6 +203,7 @@ if (localStorage.getItem("dark-mode") === "enabled") {
 }
 
 darkModeToggle.addEventListener("change", toggleDarkMode);
+// Dark mode
 
 // Add comment
 function addComment() {
@@ -259,6 +265,7 @@ function addComment() {
     like.classList.toggle("bold");
   });
 }
+// Add comment
 
 // Add like in comments
 const like = document.querySelectorAll(".add-like");
@@ -269,3 +276,4 @@ like.forEach((e) => {
     e.classList.toggle("bold");
   });
 });
+// Add like in comments
