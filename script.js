@@ -334,13 +334,57 @@ function updateActualDates() {
 
 updateActualDates();
 
-// Action form phone
-const form = document.getElementById("feedback");
-const popUp = document.querySelector(".popup__wrapper");
-const overlayForm = document.querySelector(".overlay-form");
 
-popUp.addEventListener("click", () => (popUp.style.display = "none"));
-form.addEventListener("submit", formSend);
+// Action form
+const feedbackForm = document.getElementById("feedback");
+const feedbackPopUp = document.querySelector(".popup__wrapper");
+const orderPopUp = document.querySelector(".order-popup__wrapper");
+const overlayFeedbackForm = document.querySelector(".overlay-form");
+const overlayOrderForm = document.querySelector(".order-overlay-form");
+
+feedbackPopUp.addEventListener("click", () => (feedbackPopUp.style.display = "none"));
+feedbackForm.addEventListener("submit", formSend);
+
+orderForm.addEventListener("submit", formSendOrder);
+
+function formValidate(form) {
+  let error = 0;
+  let formReq = form.querySelectorAll("._req");
+
+  for (let index = 0; index < formReq.length; index++) {
+    const input = formReq[index];
+    formRemoveError(input);
+
+    if (input.classList.contains("._email")) {
+      if (emailText(input)) {
+        formAddError(input);
+        error++;
+      }
+    } else {
+      if (input.value === "") {
+        formAddError(input);
+        error++;
+      }
+    }
+  }
+  return error;
+}
+
+function formAddError(input) {
+  input.parentElement.classList.add("_error");
+  input.classList.add("_error");
+}
+
+function formRemoveError(input) {
+  input.parentElement.classList.remove("_error");
+  input.classList.remove("_error");
+}
+
+function emailText(input) {
+  return !/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(
+    input.value
+  );
+}
 
 function formSend(e) {
   e.preventDefault();
@@ -348,68 +392,58 @@ function formSend(e) {
   const name = document.getElementById("name");
   const tel = document.getElementById("tel");
 
-  let error = formValidate(form);
+  let error = formValidate(feedbackForm);
 
   if (error === 0) {
-    overlayForm.classList.add("_sending");
+    overlayFeedbackForm.classList.add("_sending");
 
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "server.php");
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onload = () => {
       if (xhr.status === 200) {
-        popUp.style.display = "block";
-        form.reset();
-        overlayForm.classList.remove("_sending");
+        feedbackPopUp.style.display = "block";
+        feedbackForm.reset();
+        overlayFeedbackForm.classList.remove("_sending");
       } else {
         alert("There was an error sending the email.");
-        overlayForm.classList.remove("_sending");
+        overlayFeedbackForm.classList.remove("_sending");
       }
     };
 
-    xhr.send(
-      `name=${name.value}&tel=${tel.value}`
-    );
+    xhr.send(`name=${name.value}&tel=${tel.value}`);
   } else {
     alert("Please enter values");
   }
 }
 
-function formValidate() {
-  let error = 0
-  let formReq = document.querySelectorAll('._req')
+function formSendOrder(e) {
+  e.preventDefault();
 
-  for (let index = 0; index < formReq.length; index++) {
-    const input = formReq[index]
-    formRemoveError(input)
+  const sendName = document.getElementById("send-name");
+  const sendTel = document.getElementById("send-tel");
 
-    if (input.classList.contains('._email')) {
-      if (emailText(input)) {
-        formAddError(input)
-        error++
+  let error = formValidate(orderForm);
+
+  if (error === 0) {
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "server.php");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        orderPopUp.style.display = "block";
+        orderForm.reset();
+        overlayOrderForm.classList.remove("_sending");
+      } else {
+        alert("There was an error sending the email.");
+        overlayOrderForm.classList.remove("_sending");
       }
-    } else {
-      if (input.value === '') {
-        formAddError(input)
-        error++
-      }
-    }
+    };
+
+    xhr.send(`name=${sendName.value}&tel=${sendTel.value}`);
+  } else {
+    alert("Please enter values");
   }
-  return error
 }
 
-function formAddError(input) {
-  input.parentElement.classList.add('_error')
-  input.classList.add('_error')
-}
-
-function formRemoveError(input) {
-  input.parentElement.classList.remove('_error')
-  input.classList.remove('_error')
-}
-
-function emailText(input) {
-  return !/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(
-    input.value
-  )
-}

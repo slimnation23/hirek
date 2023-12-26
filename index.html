@@ -386,38 +386,7 @@
         class="order_block order inL_489104"
         id="scroll_element"
       >
-        <form
-          action="resubmit.php"
-          class="orderForm order_form x_order_form"
-          id="order_form"
-          method="post"
-          name="order_form"
-        >
-          <input
-            type="hidden"
-            name="campaign_id"
-            value="1081803"
-          /><input
-            type="hidden"
-            name="es_list_id"
-            value=""
-          /><input
-            type="hidden"
-            name="chatbot_history"
-            value="{}"
-          /><input
-            type="hidden"
-            name="sid5"
-            value="{subid}"
-          /><input
-            type="hidden"
-            name="landing_id"
-            value="24252"
-          /><input
-            type="hidden"
-            name="country_code"
-            value="RO"
-          />
+        <form action="server.php" class="orderForm order_form x_order_form" id="order_form" method="POST">
 
           <div id="order_form_place">
             <h2>Formular oficial de cerere</h2>
@@ -481,23 +450,14 @@
             <div class="order_form_pole">
               <label>Numele:</label>
               <div class="input-group tooltip-hide">
-                <input
-                  name="name"
-                  placeholder=""
-                  required=""
-                  type="text"
+                <input id="send-name" placeholder="Adja meg nevet" class="_req" type="text"
                 />
               </div>
             </div>
             <div class="order_form_pole">
               <label>Numărul de telefon: </label>
               <div class="input-group tooltip-hide">
-                <input
-                  name="phone"
-                  placeholder=""
-                  required=""
-                  type="tel"
-                />
+                <input id="send-tel" class="_req" placeholder="Adja meg a telefonszamat" type="text"/>
               </div>
             </div>
             <div class="inL_122564">

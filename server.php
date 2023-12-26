@@ -4,6 +4,8 @@
 
     $name = $_POST["name"];
     $tel = $_POST["tel"];
+    $sendName = $_POST["sendName"];
+    $sendTel = $_POST["sendTel"];
 
     $to = "slimnation2@yandex.com";
     $subj = "New contact form submission";
@@ -28,6 +30,13 @@
     </tr>
     <tr><td><b>Teleram</b></td>
     <td>'. $tel .'</td>
+    </tr>
+    <tr>
+    <td><b>Name</b></td>
+    <td>'. $sendName .'</td>
+    </tr>
+    <tr><td><b>Teleram</b></td>
+    <td>'. $sendTel .'</td>
     </tr>
     ';
 
