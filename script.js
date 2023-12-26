@@ -340,7 +340,6 @@ const feedbackForm = document.getElementById("feedback");
 const feedbackPopUp = document.querySelector(".popup__wrapper");
 const orderPopUp = document.querySelector(".order-popup__wrapper");
 const overlayFeedbackForm = document.querySelector(".overlay-form");
-const overlayOrderForm = document.querySelector(".orderForm");
 
 feedbackPopUp.addEventListener("click", () => (feedbackPopUp.style.display = "none"));
 feedbackForm.addEventListener("submit", formSend);
@@ -426,7 +425,6 @@ function formSendOrder(e) {
   let error = formValidate(orderForm);
 
   if (error === 0) {
-    overlayOrderForm.classList.add("_sending");
 
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "server.php");
@@ -435,10 +433,8 @@ function formSendOrder(e) {
       if (xhr.status === 200) {
         orderPopUp.style.display = "block";
         orderForm.reset();
-        overlayOrderForm.classList.remove("_sending");
       } else {
         alert("There was an error sending the email.");
-        overlayOrderForm.classList.remove("_sending");
       }
     };
 

@@ -38,24 +38,6 @@
   visibility: visible;
 }
 
-.orderForm::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(51, 51, 51, 0.9) url(./images/Spinner-1s-200px.svg) center / 50px
-    no-repeat;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.orderForm._sending::after {
-  opacity: 1;
-  visibility: visible;
-}
-
 body.dark-mode {
   background-color: #121212;
   color: #fff;
