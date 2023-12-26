@@ -374,3 +374,42 @@ function formSend(e) {
     alert("Please enter values");
   }
 }
+
+function formValidate() {
+  let error = 0
+  let formReq = document.querySelectorAll('._req')
+
+  for (let index = 0; index < formReq.length; index++) {
+    const input = formReq[index]
+    formRemoveError(input)
+
+    if (input.classList.contains('._email')) {
+      if (emailText(input)) {
+        formAddError(input)
+        error++
+      }
+    } else {
+      if (input.value === '') {
+        formAddError(input)
+        error++
+      }
+    }
+  }
+  return error
+}
+
+function formAddError(input) {
+  input.parentElement.classList.add('_error')
+  input.classList.add('_error')
+}
+
+function formRemoveError(input) {
+  input.parentElement.classList.remove('_error')
+  input.classList.remove('_error')
+}
+
+function emailText(input) {
+  return !/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(
+    input.value
+  )
+}
