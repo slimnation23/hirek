@@ -899,13 +899,20 @@
         </div>
         <div class="form-content">
           <p>Mindent elmondunk errol a termekrol , a legjobb falteleket es 70%-os kedvezmenyt kinalunk Onnek!</p>
-          <form action="">
-            <input type="text" placeholder="Adja meg nevet">
-            <input type="text" placeholder="Adja meg a telefonszamat">
+          <form id="feedback" action="server.php">
+            <input id="name" class="_req" type="text" placeholder="Adja meg nevet">
+            <input id="tel" class="_req" type="text" placeholder="Adja meg a telefonszamat">
             <button class="form-btn">Rendeles</button>
           </form>
           <span>Az operator 15-30 percen belul visszahivja Ont</span>
         </div>
+      </div>
+    </div>
+
+    <!-- Popup send message -->
+    <div class="popup__wrapper">
+      <div class="pop-up">
+        <p>Thank you for message</p>
       </div>
     </div>
 

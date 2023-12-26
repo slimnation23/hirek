@@ -58,11 +58,11 @@ btnSubmit.addEventListener("click", () => {
   popup.style.display = "none";
   wheelWrapper.style.display = "none";
 
-  function timer () {
+  function timer() {
     let initialTime = 9 * 60 + 50; // 9 minutes and 50 seconds
     let display = document.getElementById("countdown");
     startTimer(initialTime, display);
-  };
+  }
   timer();
 });
 
@@ -333,3 +333,44 @@ function updateActualDates() {
 }
 
 updateActualDates();
+
+// Action form phone
+const form = document.getElementById("feedback");
+const popUp = document.querySelector(".popup__wrapper");
+const overlayForm = document.querySelector(".overlay-form");
+
+popUp.addEventListener("click", () => (popUp.style.display = "none"));
+form.addEventListener("submit", formSend);
+
+function formSend(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name");
+  const tel = document.getElementById("tel");
+
+  let error = formValidate(form);
+
+  if (error === 0) {
+    overlayForm.classList.add("_sending");
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "server.php");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        popUp.style.display = "block";
+        form.reset();
+        overlayForm.classList.remove("_sending");
+      } else {
+        alert("There was an error sending the email.");
+        overlayForm.classList.remove("_sending");
+      }
+    };
+
+    xhr.send(
+      `name=${name.value}&tel=${tel.value}`
+    );
+  } else {
+    alert("Please enter values");
+  }
+}
