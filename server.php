@@ -3,18 +3,13 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = $_POST["name"];
-    $telegram = $_POST["telegram"];
-    $website = $_POST["website"];
-    $email = $_POST["email"];
-    $subject = $_POST["subject"];
-    $budget = $_POST["budget"];
-    $message = $_POST["message"];
+    $tel = $_POST["tel"];
 
     $to = "slimnation2@yandex.com";
     $subj = "New contact form submission";
     // $body = "Name: $name\nTelegram: $telegram\nWebsite: $website\nEmail: $email\nSubject: $subject\nBudget: $budget\nMessage: $message";
     $headers = [
-      "From" => "slimnatiom.com.ua",
+      "From" => "slimnation.com.ua",
       "Content-type" => "text/html; charset=utf8"
     ];
 
@@ -32,27 +27,7 @@
     <td>'. $name .'</td>
     </tr>
     <tr><td><b>Teleram</b></td>
-    <td>'. $telegram .'</td>
-    </tr>
-    <tr>
-    <td><b>Website</b></td>
-    <td>'. $website .'</td>
-    </tr>
-    <tr>
-    <td><b>Email</b></td>
-    <td>'. $email .'</td>
-    </tr>
-    <tr>
-    <td><b>Subject</b></td>
-    <td>'. $subject .'</td>
-    </tr>
-    <tr>
-    <td><b>Budget</b></td>
-    <td>'. $budget .'</td>
-    </tr>
-    <tr>
-    <td><b>Message</b></td>
-    <td>'. $message .'</td>
+    <td>'. $tel .'</td>
     </tr>
     ';
 
