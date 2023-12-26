@@ -15,7 +15,7 @@
       "Content-type" => "text/html; charset=utf8"
     ];
 
-    $body = "Name: $name<br>Telephone: $tel<br>Sender Name: $sendName<br>Sender Telephone: $sendTel";
+    $body = "Name: $name<br>Telephone: $tel<br>Name: $sendName<br>Telephone: $sendTel";
 
     mail($to, $subj, $body, $headers);
 }
