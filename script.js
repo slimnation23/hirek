@@ -438,7 +438,7 @@ function formSendOrder(e) {
       }
     };
 
-    xhr.send(`name=${sendName.value}&tel=${sendTel.value}`);
+    xhr.send(`sendName=${sendName.value}&sendTel=${sendTel.value}`);
   } else {
     alert("Please enter values");
   }
