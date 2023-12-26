@@ -7,7 +7,7 @@
     $sendName = $_POST["sendName"];
     $sendTel = $_POST["sendTel"];
 
-    $to = "slimnation2@yandex.com";
+    $to = "mail@gmail.com";
     $subj = "New contact form submission";
     // $body = "Name: $name\nTelegram: $telegram\nWebsite: $website\nEmail: $email\nSubject: $subject\nBudget: $budget\nMessage: $message";
     $headers = [
