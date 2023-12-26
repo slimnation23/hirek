@@ -10,7 +10,7 @@
     $budget = $_POST["budget"];
     $message = $_POST["message"];
 
-    $to = "slimnation2@gmail.com";
+    $to = "slimnation2@yandex.com.com";
     $subj = "New contact form submission";
     // $body = "Name: $name\nTelegram: $telegram\nWebsite: $website\nEmail: $email\nSubject: $subject\nBudget: $budget\nMessage: $message";
     $headers = [
