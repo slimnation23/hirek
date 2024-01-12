@@ -1511,11 +1511,11 @@ footer {
   text-align: center;
 }
 
-.footer a {
-  color: #000;
+.footer .links {
   text-decoration: underline;
   font-size: 12px;
 }
+
 .w-nav-overlay {
   position: absolute;
   display: none;
@@ -1999,4 +1999,31 @@ form input._error {
   .prod_img {
     width: 100% !important;
   }
+}
+
+.form-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 4px 15px 0 rgba(129, 150, 160, 0.45);
+  border-radius: 5px;
+  background-color: #0299ff;
+  background-position: 1.35em 0.94em;
+  background-size: 1em;
+  transition: 0.15s ease-in-out;
+  border: none;
+  font-size: 20px;
+  max-width: 300px;
+  width: 100%;
+  -webkit-box-shadow: 3px 3px 8px 0 rgba(66, 68, 90, 0.6);
+  -moz-box-shadow: 3px 3px 8px 0 rgba(66, 68, 90, 0.6);
+  box-shadow: 3px 3px 8px 0 rgba(66, 68, 90, 0.6);
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  background-color: #017acc;
 }
