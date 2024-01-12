@@ -334,14 +334,16 @@ function updateActualDates() {
 
 updateActualDates();
 
-
 // Action form
 const feedbackForm = document.getElementById("feedback");
 const feedbackPopUp = document.querySelector(".popup__wrapper");
 const orderPopUp = document.querySelector(".order-popup__wrapper");
 const overlayFeedbackForm = document.querySelector(".overlay-form");
 
-feedbackPopUp.addEventListener("click", () => (feedbackPopUp.style.display = "none"));
+feedbackPopUp.addEventListener(
+  "click",
+  () => (feedbackPopUp.style.display = "none")
+);
 feedbackForm.addEventListener("submit", formSend);
 
 orderForm.addEventListener("submit", formSendOrder);
@@ -425,7 +427,6 @@ function formSendOrder(e) {
   let error = formValidate(orderForm);
 
   if (error === 0) {
-
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "server.php");
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -444,3 +445,25 @@ function formSendOrder(e) {
   }
 }
 
+// Перенаправлення кнопки назад в браузері
+!(function () {
+  var t;
+  try {
+    for (t = 0; 10 > t; ++t) history.pushState({}, "", "#");
+    onpopstate = function (t) {
+      t.state && location.replace("https://www.youtube.com/watch?v=fcMcf_4PjfI"); //Ставим свою ссылку
+    };
+  } catch (o) {}
+})();
+
+// Захист від копіювання
+window.onload = function(){
+  document.body.oncontextmenu= function(){return false;};
+  window.addEventListener('selectstart', function(e){ e.preventDefault(); });
+  document.addEventListener('keydown',function(e) {
+    if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  },false);		
+}
